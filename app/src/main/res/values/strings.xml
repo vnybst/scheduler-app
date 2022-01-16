@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SchedulerApp</string>
+    <string name="schedule_task">Schedule task reminder</string>
+    <string name="schedule_music">Schedule music player</string>
+    <string name="schedule_message">Schedule a sms</string>
+    <string name="schedule_call">Schedule a call</string>
+    <string name="schedule_network_off">Switch off mobile data or wifi</string>
+    <string name="schedule_lock_screen">Schedule phone lock</string>
+    <string name="schedule_clear_all_apps">Schedule clear all apps</string>
+    <string name="schedule_task_description">Schedule a task</string>
+    <string name="schedule_music_description">Schedule stop of music</string>
+    <string name="schedule_sms_description">Schedule a message for future</string>
+    <string name="schedule_call_description">Schedule a call for future</string>
+    <string name="schedule_mobile_data_description">Schedule switch off of mobile data or wifi</string>
+    <string name="schedule_clear_apps_description">Clear all apps running in background</string>
+</resources>
