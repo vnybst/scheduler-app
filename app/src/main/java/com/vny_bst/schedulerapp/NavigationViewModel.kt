@@ -13,10 +13,10 @@ class NavigationViewModel : ViewModel() {
 
     private val clickItemPosition = MutableLiveData<Int>()
 
-    fun setClickedPosition(position: Int) {
+    fun onClick(position: Int) {
         clickItemPosition.postValue(position)
     }
 
-    fun clickedPosition() = clickItemPosition
+    fun clickPosition() = clickItemPosition
 
 }

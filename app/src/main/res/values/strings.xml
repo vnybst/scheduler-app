@@ -13,4 +13,10 @@
     <string name="schedule_call_description">Schedule a call for future</string>
     <string name="schedule_mobile_data_description">Schedule switch off of mobile data or wifi</string>
     <string name="schedule_clear_apps_description">Clear all apps running in background</string>
+    <string name="home_route">home</string>
+    <string name="home_label">Home</string>
+    <string name="history_label">History</string>
+    <string name="history_route">history</string>
+    <string name="settings_route">settings</string>
+    <string name="settings_label">Settings</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.vny_bst.schedulerapp.ui.view
+package com.vny_bst.schedulerapp.ui.taskschedulerbottomsheet
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -19,14 +19,13 @@ import com.vny_bst.schedulerapp.ui.theme.Typography
 import com.vny_bst.schedulerapp.ui.theme.firaSansFamily
 
 /**
- * Created by Vinay Singh Bisht on 05-Oct-21.
+ * Created by Vinay Singh Bisht on 13-Oct-21.
  */
 
 @Composable
-fun TaskSchedulerScreen() {
+fun MusicSchedulerScreen() {
 
-    var taskName by remember { mutableStateOf("") }
-    var taskDescription by remember { mutableStateOf("") }
+    var scheduleTime by remember { mutableStateOf("") }
 
     Row {
         Column(
@@ -43,7 +42,7 @@ fun TaskSchedulerScreen() {
             )
 
             Text(
-                text = stringResource(id = R.string.schedule_task),
+                text = stringResource(id = R.string.schedule_music_description),
                 style = Typography.body1,
                 fontFamily = firaSansFamily,
                 fontWeight = FontWeight.Bold
@@ -58,7 +57,7 @@ fun TaskSchedulerScreen() {
             TextField(
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = taskName,
+                value = scheduleTime,
                 maxLines = 1,
                 textStyle = TextStyle(fontWeight = FontWeight.Normal),
                 keyboardOptions = KeyboardOptions(
@@ -66,29 +65,9 @@ fun TaskSchedulerScreen() {
                     imeAction = ImeAction.Next
                 ),
                 onValueChange = {
-                    taskName = it
+                    scheduleTime = it
                 },
-                label = { Text("Task name") }
-            )
-
-            Spacer(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(16.dp)
-            )
-
-            TextField(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                value = taskDescription,
-                onValueChange = {
-                    taskDescription = it
-                },
-                textStyle = TextStyle(fontWeight = FontWeight.Normal),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text
-                ),
-                label = { Text("Reminder time") }
+                label = { Text("Enter time(in min)") }
             )
 
             Spacer(
@@ -98,16 +77,23 @@ fun TaskSchedulerScreen() {
             )
 
             Button(
-                onClick = { },
+                onClick = {
+/*                    val intent = Intent("com.android.music.musicservicecommand")
+                    intent.putExtra("command", "pause")
+                    activity.sendBroadcast(intent)*/
+                },
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
                 Text(
-                    text = "Done",
+                    text = "Set Scheduler",
                     fontFamily = firaSansFamily,
                     fontWeight = FontWeight.Normal
                 )
             }
+
         }
+
     }
+
 }

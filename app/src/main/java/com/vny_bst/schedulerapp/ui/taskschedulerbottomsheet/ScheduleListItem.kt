@@ -1,4 +1,4 @@
-package com.vny_bst.schedulerapp.ui.view
+package com.vny_bst.schedulerapp.ui.taskschedulerbottomsheet
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
