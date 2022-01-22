@@ -91,9 +91,7 @@ fun MusicSchedulerScreen() {
                     fontWeight = FontWeight.Normal
                 )
             }
-
         }
-
     }
 
 }
