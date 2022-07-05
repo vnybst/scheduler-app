@@ -3,7 +3,6 @@ package com.vny_bst.schedulerapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -20,7 +19,7 @@ class MainActivity : ComponentActivity() {
             SchedulerAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    SchedulerApp()
+                    SchedulerApp(this)
                 }
             }
         }

@@ -1,5 +1,7 @@
 package com.vny_bst.schedulerapp.ui.taskschedulerbottomsheet
 
+import android.app.Activity
+import android.content.Intent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
@@ -23,10 +25,8 @@ import com.vny_bst.schedulerapp.ui.theme.firaSansFamily
  */
 
 @Composable
-fun MusicSchedulerScreen() {
-
+fun MusicSchedulerScreen(activity: Activity) {
     var scheduleTime by remember { mutableStateOf("") }
-
     Row {
         Column(
             modifier = Modifier
@@ -78,9 +78,9 @@ fun MusicSchedulerScreen() {
 
             Button(
                 onClick = {
-/*                    val intent = Intent("com.android.music.musicservicecommand")
+                    val intent = Intent("com.android.music.musicservicecommand")
                     intent.putExtra("command", "pause")
-                    activity.sendBroadcast(intent)*/
+                    activity.sendBroadcast(intent)
                 },
                 modifier = Modifier
                     .fillMaxWidth()

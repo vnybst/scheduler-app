@@ -10,8 +10,7 @@ import com.vny_bst.schedulerapp.util.TaskType
 @Entity(tableName = "tbl_schedules")
 data class ScheduleTask(
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
-    val taskName: String,
-    val cat_id: Int,
-    val time: Long,
-    val taskType: TaskType? = null
+    var taskName: String? = null,
+    var time: Long? = 0L,
+    var taskType: TaskType? = null
 )

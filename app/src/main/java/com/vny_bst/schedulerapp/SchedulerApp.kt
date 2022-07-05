@@ -1,5 +1,6 @@
 package com.vny_bst.schedulerapp
 
+import android.app.Activity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -7,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -19,6 +19,7 @@ import com.vny_bst.schedulerapp.ui.history.History
 import com.vny_bst.schedulerapp.ui.home.Home
 import com.vny_bst.schedulerapp.ui.settings.Settings
 import com.vny_bst.schedulerapp.ui.theme.firaSansFamily
+import com.vny_bst.schedulerapp.viewmodel.TaskScheduleViewModel
 import java.util.*
 
 /**
@@ -27,11 +28,10 @@ import java.util.*
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun SchedulerApp() {
+fun SchedulerApp(activity: Activity? = null) {
     val navController = rememberNavController()
     val items = listOf(Screens.Home, Screens.History, Screens.Settings)
     var currentNavigationItem by remember { mutableStateOf("Home") }
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -95,11 +95,14 @@ fun SchedulerApp() {
             Modifier.padding(paddingValues)
         ) {
             composable(Screens.Home.route) {
-
-                Home()
+                if (activity != null) {
+                    Home(activity)
+                }
             }
             composable(Screens.History.route) {
-                History()
+                if (activity != null) {
+                    History(taskScheduleViewModel = TaskScheduleViewModel(activity.application))
+                }
             }
             composable(Screens.Settings.route) {
                 Settings()

@@ -29,7 +29,7 @@ fun Date.formatToDDMMMYYYY(): String? {
 
 fun Date.formatToDateTime(): String? {
     return try {
-        val sdf = SimpleDateFormat("dd-MMM-yyyy hh:mm", Locale.getDefault())
+        val sdf = SimpleDateFormat("dd-MMM-yyyy hh:mm aa", Locale.getDefault())
         sdf.format(this)
     } catch (e: Exception) {
         null
@@ -117,6 +117,16 @@ fun String.getDateWithServerTimeStamp(): Date? {
         Locale.getDefault()
     )
     dateFormat.timeZone = TimeZone.getTimeZone("GMT")  // IMP !!!
+    return try {
+        dateFormat.parse(this)
+    } catch (e: ParseException) {
+        null
+    }
+}
+
+fun String.getDate(): Date? {
+    val dateFormat = SimpleDateFormat("dd-MMM-yyyy hh:mm aa", Locale.getDefault())
+    dateFormat.timeZone = TimeZone.getDefault()  // IMP !!!
     return try {
         dateFormat.parse(this)
     } catch (e: ParseException) {

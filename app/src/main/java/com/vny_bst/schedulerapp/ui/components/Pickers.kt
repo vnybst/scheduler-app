@@ -41,7 +41,6 @@ fun timePicker(
     c.time = date
     val mHour = c[Calendar.HOUR_OF_DAY]
     val mMinute = c[Calendar.MINUTE]
-
     TimePickerDialog(
         context, { _, hour, minute ->
             c.set(Calendar.HOUR_OF_DAY, hour)

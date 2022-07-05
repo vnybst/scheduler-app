@@ -5,6 +5,7 @@ import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.vny_bst.schedulerapp.dao.TaskSchedulerDao
 import com.vny_bst.schedulerapp.data.model.ScheduleTask
 import com.vny_bst.schedulerapp.util.Constants
 
@@ -17,10 +18,12 @@ import com.vny_bst.schedulerapp.util.Constants
     version = Constants.db_version,
     exportSchema = true,
     autoMigrations = [
-        AutoMigration (from = 1, to = 2)
+        AutoMigration (from = 2, to = 3)
     ]
 )
 abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun taskSchedulerDao(): TaskSchedulerDao
 
     companion object {
 

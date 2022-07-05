@@ -7,6 +7,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import com.vny_bst.schedulerapp.data.model.ScheduleTask
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 /**
  * Created by Vinay Singh Bisht on 07-Jan-22.
@@ -15,12 +17,12 @@ import com.vny_bst.schedulerapp.data.model.ScheduleTask
 interface TaskSchedulerDao {
 
     @Insert(onConflict = REPLACE)
-    fun insert(scheduler: ScheduleTask)
+     fun insert(scheduler: ScheduleTask):Long
 
     @Query("SELECT * FROM tbl_schedules")
-    fun getAllSchedules(): LiveData<List<ScheduleTask>>
+     fun getAllSchedules(): LiveData<List<ScheduleTask>>
 
     @Delete
-    fun deleteSchedule(scheduler: ScheduleTask)
+     fun deleteSchedule(scheduler: ScheduleTask)
 
 }

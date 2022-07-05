@@ -28,4 +28,7 @@
     <string name="set_reminder">Set reminder</string>
     <string name="task_name">Task name</string>
     <string name="reminder_date">Reminder date</string>
+    <string name="fc2_nature_meditations">Hello</string>
+    <string name="mute">Mute</string>
+    <string name="open_app">Open App</string>
 </resources>
